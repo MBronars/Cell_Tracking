@@ -22,17 +22,22 @@ import numpy as np
 """
 
 def getOverlap(cellFile, proteinFile, black_background = True):
-	#read in the cell image and save it as cell, then convert to greyscale for more effective threshhold
+	#read in the protein image and save it as cell, then convert to greyscale for more effective threshhold
 	#when thresholding, anything that isn't completely white is marked as black and 
 	#we only care about the resulting thresholded cell so we discard the rest of the information by saving it as ____
+	protein = cv.imread(proteinFile)
+	protein_gray = cv.cvtColor(protein, cv.COLOR_BGR2GRAY)
+	___, protein = cv.threshold(protein_gray, 254, 255, 0)
+
+	#TODO: Add a loop at the beeginning that itterates over the 4th dimension so that we perform this loop for every image in the stack
+	#		or just once if its a single image.  However, I likely can't use imread to pull in the stack for the cell.  So figure out what to do there instead
+	
+	#Repeat the same process for the cell image
 	cell = cv.imread(cellFile)
 	cell_gray = cv.cvtColor(cell, cv.COLOR_BGR2GRAY)
 	___, cell = cv.threshold(cell_gray, 254, 255, 0)
 
-	#Repeat the same process for the protein image
-	protein = cv.imread(proteinFile)
-	protein_gray = cv.cvtColor(protein, cv.COLOR_BGR2GRAY)
-	___, protein = cv.threshold(protein_gray, 254, 255, 0)
+	
 
 	#Here we resize both the cell and the protein images to the same dimention, this ensures that 
 	#the following calculations wont error.  The choice of (400,400) is arbitrary but it should be square
