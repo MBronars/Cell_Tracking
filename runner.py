@@ -1,7 +1,9 @@
-from overlap.py import getOverlap
+from overlap import getOverlap
 def main():
-	cell = "doubleCell.png"
-	protien = "Protien.png"
-	over = getOverlap(cell, protien, false)
+	cell = "outline10.png"
+	protien = "Protein.png"
+	over = getOverlap(cell, protien, False)
 	print(over)
+if __name__ == "__main__":
+    main()
  
