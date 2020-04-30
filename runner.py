@@ -1,6 +1,6 @@
 from overlap import getOverlap
 def main():
-	cell = "outline10.png"
+	cell = "test_stack.tif"
 	protien = "Protein.png"
 	over = getOverlap(cell, protien, False)
 	print(over)
