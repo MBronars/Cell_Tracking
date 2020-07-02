@@ -60,9 +60,7 @@ def getOverlap(cellFile, proteinFile, black_background = True):
 		cell = np.array(img)
 
 		#Convert cell to grayscale in the same manner we used for the protien above
-		cell_gray = cell
-		if len(cell.shape) != 2:
-			cell_gray = cv.cvtColor(cell, cv.COLOR_BGR2GRAY)
+		cell_gray = cv.cvtColor(cell, cv.COLOR_BGR2GRAY)
 		___, cell = cv.threshold(cell_gray, 254, 255, 0)
 
 		#Here we resize both the cell and the protein images to the same dimention, this ensures that 
