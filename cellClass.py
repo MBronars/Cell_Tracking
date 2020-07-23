@@ -5,11 +5,11 @@ class Cell:
         self.used = False
         self.gone = False
         self.start = frame
-        self.history = []
-        history.append(pos)
+        self.history = [pos]
     def displayData(self):
         print("Cell " + self.name + ":")
         i = self.start
         for c in self.history:
-            print("Frame " + i + ": " + c)
+            print("Frame " + str(i) + ": " + str(c) + "\n")
+            i += 1
         
