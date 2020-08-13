@@ -46,7 +46,7 @@ class Cell:
                     close1 = xi
                     close2 = yi
         return (close1, close2)
-    def die(self, c):
+    def kill(self, c):
         c.gone = True
     def initiate(self, x, cells):
         pos = x[0]
