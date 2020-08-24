@@ -53,3 +53,4 @@ class Cell:
         c = Cell(chr(name),0,pos)
         c.used = True
         cells.append(c)
+    def match()
