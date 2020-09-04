@@ -52,7 +52,7 @@ Minimum Distance Solution:
 
 
 FUTURE WORK:
-	Future work for this project includes working on the 
+	Future wo
 
 
 

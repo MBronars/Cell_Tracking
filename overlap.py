@@ -7,34 +7,49 @@ from skimage.transform import rescale, resize
 from PIL import Image
 from PIL import ImageSequence
 import numpy as np
-
-
-
-
-"""INPUTS:
-	cellFile (string)- path to the desired cell image which can have multiple regions of interest (ROI).  Can be a single image
-	or an image stack
-	proteinFile (string)- path to the protein image, can only have one ROI, we are measuring the cells' overlap with this one ROI
-	black_background (boolean)- a boolean which is true when we have white cells/proteins on a black background.  Make sure your cell
-		and protein files have the same value for this
 """
-
-"""RETURNS:
-		A list of tupples containing ((centroid Xpos, centroid Ypos),overlap_percentage, frame_index) for every cell in the images returned by cellFile.
-		Here a centroid is the center of a cell and overlap_percentage if the percentage of the cell that overlaps with the region of interest 
-		calculated from the image returned by proteinFile.  Frame is the index of the image in the stack that the cell comes from (0 if 
-		working with a single image).
-"""
-
-def getOverlap(cellFile, proteinFile, black_background = True):
-	"""
-	(String, String, Boolean) -> [((Int, Int), Double, Int)]
-
-	This function takes paths to two files as inputs, a picture with the cells and a picture with the protien pattern,
+This script takes paths to two files as inputs, a picture with the cells and a picture with the protien pattern,
 	as well as a boolean that signals whether the background of the cell image is black or not.  The percentage of each cell
 	that overlaps with the protein pattern is calculated for every cell in the image and every image in the stack.
 	We are returned a list of tuples with ((centroid), overlap, frame_index) recorded for each cell. The frame_index refers to
 	which image in the stack the cell comes from, if you are dealing with a single image the frame_index will always be 0.  
+"""
+
+
+
+"""INPUTS:
+	
+"""
+
+"""RETURNS:
+
+"""
+
+def getOverlap(cellFile, proteinFile, black_background = True):
+	"""
+	Returns the percent overlap each cell has with the overlayed protein pattern
+
+	(String, String, Boolean) -> [((Int, Int), Double, Int)]
+
+	Parameters:
+	___________
+	cellFile : str
+		path to the desired cell image which can have multiple regions of interest (ROI).  Can be a single image
+		or an image stack
+	proteinFile : str 
+		path to the protein image, can only have one ROI, we are measuring the cells' overlap with this one ROI
+	black_background : boolean
+		a boolean which is true when we have white cells/proteins on a black background.  Make sure your cell
+		and protein files have the same value for this
+
+	Returns
+	_______
+	[((Int, Int), Double, Int)]
+		A list of tupples containing ((centroid Xpos, centroid Ypos),overlap_percentage, frame_index) for every cell in the images returned by cellFile.
+		Here a centroid is the center of a cell and overlap_percentage if the percentage of the cell that overlaps with the region of interest 
+		calculated from the image returned by proteinFile.  Frame is the index of the image in the stack that the cell comes from (0 if 
+		working with a single image).
+	
 	"""
 
 	#read in the protein image and save it as protein, then convert to greyscale for more effective threshhold
