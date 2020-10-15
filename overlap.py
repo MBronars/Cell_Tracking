@@ -17,14 +17,6 @@ This script takes paths to two files as inputs, a picture with the cells and a p
 
 
 
-"""INPUTS:
-	
-"""
-
-"""RETURNS:
-
-"""
-
 def getOverlap(cellFile, proteinFile, black_background = True):
 	"""
 	Returns the percent overlap each cell has with the overlayed protein pattern
