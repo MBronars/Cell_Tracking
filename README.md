@@ -4,7 +4,7 @@ Image Processing for Dr. Sohn's Neural Stem Cell Data
 As of 8/23/2020 
 This folder holds the most current scripts for the 
 
-**cellClass.py:**
+**cellClass.py:**\
 This class holds all of the functions and operations that are required by cells.  This file is a work in progress and is being added to as more functionallity is desired.  cellClass.py is an import for the Cell Tracker notebook.  The functions in this file include the following.
 * _displayData:_ Prints the information about the cell's history in a readable manner.
 * _divide:_ Method still in progress.  Ends the history of one cell, starts two new cells.
