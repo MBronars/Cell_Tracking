@@ -4,24 +4,22 @@ Image Processing for Dr. Sohn's Neural Stem Cell Data
 As of 8/23/2020 
 This folder holds the most current scripts for the 
 
-cellClass.py:
-	This class holds all of the functions and operations that are required by cells.  This file is a work in progress and is being added to as more functionallity is desired.  cellClass.py is an import for the Cell Tracker notebook.  The functions in this file include the following.
-		displayData: Prints the information about the cell's history in a readable manner.
-		divide: Method still in progress.  Ends the history of one cell, starts two new cells.
-		closest: Calculated the closest two living cells
-		kill:  Ends a cells history
+**cellClass.py:**\
+This class holds all of the functions and operations that are required by cells.  This file is a work in progress and is being added to as more functionallity is desired.  cellClass.py is an import for the Cell Tracker notebook.  The functions in this file include the following.
+* _displayData:_ Prints the information about the cell's history in a readable manner.
+* _divide:_ Method still in progress.  Ends the history of one cell, starts two new cells.
+* _closest:_ Calculated the closest two living cells
+* _kill:_  Ends a cells history
 
-overlap.py:
-	The only thing in this file is the function getOverlap.  With this function we can determine the percentage of overlap each cell has with each protein.
-	INPUTS:
-		cellFile (string)- path to the desired cell image which can have multiple regions of interest (ROI).  Can be a single image
-			or an image stack
-		proteinFile (string)- path to the protein image, can only have one ROI, we are measuring the cells' overlap with this one ROI
-		black_background (boolean)- a boolean which is true when we have white cells/proteins on a black background.  Make sure your cell
-			and protein files have the same value for this
-	RETURNS:
-		A list of tupples containing ((centroid Xpos, centroid Ypos),overlap_percentage, frame_index) for every cell in the images returned by cellFile.
-		Here a centroid is the center of a cell and overlap_percentage if the percentage of the cell that overlaps with the region of interest 
+**overlap.py:**\
+The only thing in this file is the function getOverlap.  With this function we can determine the percentage of overlap each cell has with each protein.
+**INPUTS:**
+* _cellFile (string)-_ path to the desired cell image which can have multiple regions of interest (ROI).  Can be a single image or an image stack.
+* _proteinFile (string)-_ path to the protein image, can only have one ROI, we are measuring the cells' overlap with this one ROI 
+* _black-background (boolean)-_ a boolean which is true when we have white cells/proteins on a black background.  Make sure your cell and protein files have the same value for this\
+
+**RETURNS:**\
+A list of tupples containing ((centroid Xpos, centroid Ypos),overlap_percentage, frame_index) for every cell in the images returned by cellFile.Here a centroid is the center of a cell and overlap_percentage if the percentage of the cell that overlaps with the region of interest 
 		calculated from the image returned by proteinFile.  Frame is the index of the image in the stack that the cell comes from (0 if 
 		working with a single image).
 
