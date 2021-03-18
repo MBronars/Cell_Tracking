@@ -6,10 +6,10 @@ This folder holds the most current scripts for the
 
 **cellClass.py:**
 This class holds all of the functions and operations that are required by cells.  This file is a work in progress and is being added to as more functionallity is desired.  cellClass.py is an import for the Cell Tracker notebook.  The functions in this file include the following.
-*_displayData:_ Prints the information about the cell's history in a readable manner.
-*_divide:_ Method still in progress.  Ends the history of one cell, starts two new cells.
-*_closest:_ Calculated the closest two living cells
-*_kill:_  Ends a cells history
+* _displayData:_ Prints the information about the cell's history in a readable manner.
+* _divide:_ Method still in progress.  Ends the history of one cell, starts two new cells.
+* _closest:_ Calculated the closest two living cells
+* _kill:_  Ends a cells history
 
 overlap.py:
 	The only thing in this file is the function getOverlap.  With this function we can determine the percentage of overlap each cell has with each protein.
