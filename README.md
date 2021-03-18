@@ -16,7 +16,7 @@ The only thing in this file is the function getOverlap.  With this function we c
 **INPUTS:**
 * _cellFile (string)-_ path to the desired cell image which can have multiple regions of interest (ROI).  Can be a single image or an image stack.
 * _proteinFile (string)-_ path to the protein image, can only have one ROI, we are measuring the cells' overlap with this one ROI 
-* _black-background (boolean)-_ a boolean which is true when we have white cells/proteins on a black background.  Make sure your cell and protein files have the same value for this
+* _black-background (boolean)-_ a boolean which is true when we have white cells/proteins on a black background.  Make sure your cell and protein files have the same value for this\
 **RETURNS:**\
 A list of tupples containing ((centroid Xpos, centroid Ypos),overlap_percentage, frame_index) for every cell in the images returned by cellFile.Here a centroid is the center of a cell and overlap_percentage if the percentage of the cell that overlaps with the region of interest 
 		calculated from the image returned by proteinFile.  Frame is the index of the image in the stack that the cell comes from (0 if 
