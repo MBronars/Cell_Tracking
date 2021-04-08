@@ -26,10 +26,10 @@ A list of tupples containing ((centroid Xpos, centroid Ypos),overlap_percentage,
 * _Frame-_ is the index of the image in the stack that the cell comes from (0 if working with a single image).
 
 ## runner.py:
-	Currently this file only has a main function that runs getOverlap on our test stack.  In general this is where we will run the finalized functions on our test data.  The next step will be to test out the code in the Cell Tracker notebook once the bugs get worked out.
+Currently this file only has a main function that runs getOverlap on our test stack.  In general this is where we will run the finalized functions on our test data.  The next step will be to test out the code in the Cell Tracker notebook once the bugs get worked out.
 
 ## Images:
-	This file holds all of the images and image stacks that are called by the notebooks and runner.py
+This file holds all of the images and image stacks that are called by the notebooks and runner.py
 
 ## Notebooks:
 Python notebooks were used for testing out the code and all of the functions.  Final versions of the functions will not be found in these notebooks but they have good visual aids that can assist with the understanding of the code.  This is also where new functionallity is being developed and bugs are being worked out.
